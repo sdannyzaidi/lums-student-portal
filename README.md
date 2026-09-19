@@ -1,218 +1,195 @@
 # LUMS Student Portal 🎓
 
-[![Flutter](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)](https://flutter.dev)
-[![Firebase](https://img.shields.io/badge/Firebase-039BE5?style=for-the-badge&logo=Firebase&logoColor=white)](https://firebase.google.com)
-[![Dart](https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white)](https://dart.dev)
+A Flutter-based mobile application built for students at Lahore University of Management Sciences (LUMS).
 
-A comprehensive mobile application designed to enhance the student experience at Lahore University of Management Sciences (LUMS). This cross-platform Flutter app provides students with essential tools for campus life, academic management, and community engagement.
+The app combines common student services with a campus news feed and community features, using Firebase for authentication, database, and storage.
 
-## 📱 Features
+## Features
 
-### 🔐 Authentication & Security
-- **Secure Login/Signup** - Firebase Authentication integration
-- **Account Verification** - Email verification system
-- **Password Management** - Reset and change password functionality
-- **Profile Management** - Comprehensive user profile system
+### Authentication
 
-### 📰 Campus Communication
-- **News Feed** - Stay updated with campus announcements and events
-- **Post Creation** - Share updates, events, and information with the community
-- **Interactive Polls** - Participate in campus-wide surveys and voting
-- **Saved Posts** - Bookmark important announcements and posts
+* Email/password login and registration
+* Email verification
+* Password reset and change
+* User profile management
 
-### 🎯 Student Services
-- **Complaint System** - Submit and track complaints with resolution status
-- **Student Council Integration** - Direct communication with student representatives
-- **Office Hours** - Access faculty and staff availability schedules
-- **Document Access** - Quick access to important campus documents
+### Campus Feed
 
-### 👥 Community Features
-- **User Profiles** - Detailed student profiles with customization options
-- **Social Interaction** - Connect and communicate with fellow students
-- **Campus Updates** - Real-time notifications and announcements
+* View campus announcements and posts
+* Create posts
+* Participate in polls
+* Save posts for later
 
-## 🛠️ Technology Stack
+### Student Services
 
-- **Frontend**: Flutter (Dart)
-- **Backend**: Firebase
-  - Authentication
-  - Cloud Firestore (Database)
-  - Cloud Storage
-- **State Management**: Provider Pattern
-- **UI/UX**: Material Design with custom theming
+* Submit and track complaints
+* Access student council information
+* View faculty and staff office hours
+* Access important campus documents
 
-## 📋 Prerequisites
+### Community
 
-Before running this project, make sure you have:
+* Student profiles
+* Interact with other students
+* Receive campus updates and notifications
 
-- [Flutter SDK](https://flutter.dev/docs/get-started/install) (>=2.12.2)
-- [Dart SDK](https://dart.dev/get-dart) (>=2.12.2)
-- [Android Studio](https://developer.android.com/studio) or [VS Code](https://code.visualstudio.com/)
-- [Firebase CLI](https://firebase.google.com/docs/cli) (for Firebase setup)
-- Android/iOS device or emulator
+## Tech Stack
 
-## 🚀 Installation & Setup
+* **Flutter / Dart** — Mobile app
+* **Firebase Authentication** — User authentication
+* **Cloud Firestore** — Application data
+* **Cloud Storage** — File and image storage
+* **Provider** — State management
+* **Material Design** — UI
 
-### 1. Clone the Repository
+## Getting Started
+
+### Requirements
+
+* [Flutter SDK](https://flutter.dev)
+* [Dart SDK](https://dart.dev)
+* Android Studio or VS Code
+* Firebase project
+* Android/iOS device or emulator
+
+### Installation
+
+Clone the repository:
+
 ```bash
 git clone https://github.com/yourusername/lums-student-portal.git
 cd lums-student-portal
 ```
 
-### 2. Install Dependencies
+Install the Flutter dependencies:
+
 ```bash
 flutter pub get
 ```
 
-### 3. Firebase Configuration
-1. Create a new Firebase project at [Firebase Console](https://console.firebase.google.com/)
-2. Add Android/iOS apps to your Firebase project
-3. Download and place configuration files:
-   - `google-services.json` in `android/app/`
-   - `GoogleService-Info.plist` in `ios/Runner/`
+### Firebase Setup
 
-### 4. Enable Firebase Services
-In your Firebase console, enable:
-- Authentication (Email/Password)
-- Cloud Firestore
-- Cloud Storage
+Create a Firebase project and connect the Android and iOS applications to it.
 
-### 5. Run the Application
+Add the Firebase configuration files:
+
+```text
+android/app/google-services.json
+ios/Runner/GoogleService-Info.plist
+```
+
+Enable the following Firebase services:
+
+* Authentication
+* Cloud Firestore
+* Cloud Storage
+
+### Run the App
+
 ```bash
-# For Android
 flutter run
+```
 
-# For iOS
+For a specific platform:
+
+```bash
 flutter run -d ios
-
-# For Web
 flutter run -d chrome
 ```
 
-## 📁 Project Structure
+## Project Structure
 
-```
+```text
 lib/
 ├── Backend/
-│   ├── authentication.dart      # Firebase auth logic
-│   ├── signUpOrLogin.dart       # Authentication flow
-│   └── validators.dart          # Input validation
+│   ├── authentication.dart
+│   ├── signUpOrLogin.dart
+│   └── validators.dart
 ├── Themes/
-│   ├── Theme.dart              # App theming and colors
-│   └── progessIndicator.dart   # Custom loading indicators
+│   ├── Theme.dart
+│   └── progessIndicator.dart
 ├── models/
-│   ├── complaint.dart          # Complaint data model
-│   ├── post.dart              # Post data model
-│   ├── profile.dart           # User profile model
-│   └── officeHours.dart       # Office hours model
+│   ├── complaint.dart
+│   ├── post.dart
+│   ├── profile.dart
+│   └── officeHours.dart
 ├── pages/
-│   ├── home.dart              # Main dashboard
-│   ├── login.dart             # Login screen
-│   ├── signUp.dart            # Registration screen
-│   ├── newsfeed.dart          # Campus news feed
-│   ├── profile.dart           # User profile
-│   ├── addPost.dart           # Create new posts
-│   ├── addComplaint.dart      # Submit complaints
-│   ├── studentCouncil.dart    # Student council interface
-│   └── settings.dart          # App settings
-└── main.dart                  # App entry point
+│   ├── home.dart
+│   ├── login.dart
+│   ├── signUp.dart
+│   ├── newsfeed.dart
+│   ├── profile.dart
+│   ├── addPost.dart
+│   ├── addComplaint.dart
+│   ├── studentCouncil.dart
+│   └── settings.dart
+└── main.dart
 ```
 
-## 🎨 Screenshots
+## Application Flow
 
-*Add screenshots of your app here to showcase the UI*
+A typical user flow looks like this:
 
-## 🔧 Configuration
-
-### Firebase Rules
-Make sure to configure your Firestore security rules appropriately:
-
-```javascript
-rules_version = '2';
-service cloud.firestore {
-  match /databases/{database}/documents {
-    // Add your security rules here
-    match /{document=**} {
-      allow read, write: if request.auth != null;
-    }
-  }
-}
+```text
+Register / Login
+       ↓
+     Home
+       ↓
+ ┌─────┼──────────────┐
+ ↓     ↓              ↓
+Feed  Services      Profile
+ ↓     ↓
+Posts  Complaints
+Polls  Office Hours
+       Documents
 ```
 
-### App Permissions
-The app requires the following permissions:
-- Internet access
-- Camera (for profile pictures)
-- Storage (for file uploads)
+## Screenshots
 
-## 🧪 Testing
+Screenshots can be added here to show the main screens and UI of the application.
 
-Run the test suite:
+## Testing
+
+Run the Flutter test suite with:
+
 ```bash
 flutter test
 ```
 
-## 📱 Building for Production
+## Building
 
 ### Android
+
 ```bash
 flutter build apk --release
-# or for app bundle
+```
+
+Or generate an Android App Bundle:
+
+```bash
 flutter build appbundle --release
 ```
 
 ### iOS
+
 ```bash
 flutter build ios --release
 ```
 
-## 🤝 Contributing
+## Team
 
-We welcome contributions! Please follow these steps:
+**Group 04 — Software Engineering (CS 360), Spring 2021**
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+* **Zuha Zia** — Group Leader
+* **Huzaifah Nadeem** — Project Champion
+* **Syed Muhammad Daniyal Zaidi** — Developer
+* **Suleman Khan** — Developer
+* **Khawaja Saad Munir** — Developer
 
-### Code Style
-- Follow [Dart style guide](https://dart.dev/guides/language/effective-dart/style)
-- Use meaningful variable and function names
-- Add comments for complex logic
-- Ensure proper error handling
+## License
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 👥 Team
-
-**Group 04 - Software Engineering (CS 360) Spring 2021**
-
-- **Zuha Zia** - Group Leader
-- **Huzaifah Nadeem** - Project Champion
-- **Syed Muhammad Daniyal Zaidi** - Developer
-- **Suleman Khan** - Developer
-- **Khawaja Saad Munir** - Developer
-
-## 🏫 About LUMS
-
-[Lahore University of Management Sciences (LUMS)](https://lums.edu.pk/) is a leading university in Pakistan, known for its academic excellence and innovative approach to education.
-
-## 📞 Support
-
-For support and questions:
-- Create an issue in this repository
-- Contact the development team
-- Check the [Flutter documentation](https://flutter.dev/docs)
-
-## 🙏 Acknowledgments
-
-- LUMS Faculty and Staff for their guidance
-- Flutter and Firebase teams for excellent documentation
-- The open-source community for inspiration and resources
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ---
 
-**Made with ❤️ by LUMS Students for LUMS Students**
+Built by students as part of the LUMS Software Engineering course.
